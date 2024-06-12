@@ -57,7 +57,11 @@
         p {
             font-weight: bolder;
         }
+        body {
+            font-family: "Trirong", serif;
+          }
     </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 </head>
 
 <body>
@@ -68,16 +72,18 @@
                 aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <div id="score-container" class="text-center mt-4"></div>
-        <hr>
-        <hr>
+        <hr />
+        <hr />
         <div id="quiz-container" class="mt-4">
             <!-- Questions will be inserted here by JavaScript -->
         </div>
-        <hr>
+        <hr />
         <div id="end-of-page" class="mt-4">
             <p>Developed by Mohamed Abdel Fatah</p>
             <p><a href="https://github.com/Mohamed6061">Githup</a></p>
-            <p><a href="https://www.linkedin.com/in/mohamed-abdel-fatah-0369b6221">LinkedIn</a></p>
+            <p>
+                <a href="https://www.linkedin.com/in/mohamed-abdel-fatah-0369b6221">LinkedIn</a>
+            </p>
         </div>
     </div>
 
@@ -87,6 +93,10 @@
     <script>
         const questions = [
             {
+                question: "Question consists of there parts 😊. This part from question after every chapter: ",
+                options: ["Continue"],
+                answer: 0
+            }, {
                 question: "The area under the daily load curve gives average power.",
                 options: ["True", "False"],
                 answer: 1
@@ -179,7 +189,7 @@
                 question: "Maximum demand tariff is not applied to domestic consumers because their max demand is small.",
                 options: ["True", "False"],
                 answer: 0
-            }, 
+            },
             {
                 question: "The power factor of an a.c. circuit is given by active power divided by apparent power.",
                 options: ["True", "False"],
@@ -205,7 +215,7 @@
                 options: ["True", "False"],
                 answer: 0
             }
-            , 
+            ,
             {
                 question: "Area under the daily load curve divided by 24 gives average load.",
                 options: ["average load", "maximum demand", "units generated"],
@@ -314,6 +324,11 @@
                 answer: 0
             },
             {
+                question: "Great work bro as usual ;) . lets continue, This part from midterm question:",
+                options: ["Continue"],
+                answer: 0
+            },
+            {
                 question: "The improvement of the power factor of the system causes the available active power from the generating units to",
                 options: ["decrease", "increase", "be the same"],
                 answer: 1 // b) increase
@@ -377,8 +392,720 @@
                 question: "In order to meet the future requirements, the plant capacity should be ............ above the maximum demand on the plant.",
                 options: ["5%-10%", "15%-20%", "20%-25%", "25%-30%"],
                 answer: 1
+            },
+            {
+                question: "You did it again ✌️. This last part from Websites questions:",
+                options: ["Continue"],
+                answer: 0
+            },
+
+
+            {
+                question: "What does a load duration curve represent?",
+                options: [
+                    "The variation of load during different hours of the day.",
+                    "Average load.",
+                    "The number of hours for which a particular lasts during the day.",
+                    "None of the above."
+                ],
+                answer: 2 // c. The number of hours for which a particular lasts during the day.
+            },
+            {
+                question: "What is the shape of the load duration curve?",
+                options: [
+                    "Rectangular shape.",
+                    "Triangular shape.",
+                    "Parabolic shape.",
+                    "Free hand sketch."
+                ],
+                answer: 0 // a. Rectangular shape.
+            },
+            {
+                question: "Maximum and Minimum loads on the load duration curve is represented on which respective side?",
+                options: ["Left and Right.", "Right and Left.", "Randomly.", "None of these."],
+                answer: 0 // a. Left and Right.
+            },
+            {
+                question: "What does the chronological load curve indicate?",
+                options: [
+                    "Variation in demand factor during 24 hours.",
+                    "Variation of demand from instant to instant during 24 hour.",
+                    "The total energy consumed upto different times of the day.",
+                    "The total number of hours for which a particular load lasts during the day."
+                ],
+                answer: 1 // b. Variation of demand from instant to instant during 24 hour.
+            },
+            {
+                question: "What is a load curve?",
+                options: [
+                    "A plot of load vs current.",
+                    "A plot of load vs time.",
+                    "A plot of load vs duration of time.",
+                    "Total number of units generated vs time."
+                ],
+                answer: 1 // b. A plot of load vs time.
+            },
+            {
+                question: "What does the area under the load curve represent?",
+                options: ["System voltage.", "Current.", "Energy consumed.", "Maximum demand."],
+                answer: 2 // c. Energy consumed.
+            },
+            {
+                question: "What does the highest point on the daily load curve represents?",
+                options: ["Peak load.", "Maximum demand.", "Both (a) & (d).", "None of these."],
+                answer: 1 // b. Maximum demand.
+            },
+            {
+                question: "Load curve of a generation is always",
+                options: ["Positive slope.", "Zero slope.", "Negative slope.", "Combination of (a), (b) and (c)."],
+                answer: 3 // d. Combination of (a), (b) and (c).
+            },
+            {
+                question: "If the daily load curve is divided by 24, what does this curve represent?",
+                options: ["Average load for the day.", "Connected load.", "Maximum demand.", "Demand factor."],
+                answer: 0 // a. Average load for the day.
+            },
+            {
+                question: "What does a mass curve represent?",
+                options: [
+                    "Average load.",
+                    "The total energy consumed by the load upto a particular time in a day.",
+                    "The number of hours for which a particular lasts during the day.",
+                    "The variation of load during different hours of the day."
+                ],
+                answer: 1 // b. The total energy consumed by the load upto a particular time in a day.
+            },
+            {
+                question: "The mass curve is plotted from which of the following curve?",
+                options: ["Chronological curve.", "Energy load curve.", "Load duration curve.", "Both (a) and (b)."],
+                answer: 2 // c. Load duration curve.
+            },
+            {
+                question: "What is a load factor?",
+                options: [
+                    "The ratio of average to maximum demand.",
+                    "The ratio of maximum demand to average load.",
+                    "The product of maximum demand and average load.",
+                    "The ratio of average load to the plant capacity."
+                ],
+                answer: 0 // a. The ratio of average to maximum demand.
+            },
+            {
+                question: "What is the load factor of a power plant?",
+                options: ["Greater than unity.", "Less than unity.", "Always more than unity.", "Normally more than unity."],
+                answer: 1 // b. Less than unity.
+            },
+            {
+                question: "The load factor plays a key role in determining which among the following?",
+                options: ["Plant capacity.", "Overall cost per unit generated.", "Overall demand.", "Both (a) and (c)."],
+                answer: 1 // b. Overall cost per unit generated.
+            },
+            {
+                question: "An industrial consumer has a load pattern of 2000 kW 0.8 lag for 12 hours and 1000 kW unity power factor for 12 hours. What is the load factor?",
+                options: ["0.5", "0.55", "0.6", "0.75"],
+                answer: 3 // d. 0.75
+            },
+            {
+                question: "What is the plant capacity factor?",
+                options: [
+                    "A ratio of kWh generated to the product of plant capacity and the number of hours for which the plant is in operation.",
+                    "The ratio of sum of individual maximum demands to the maximum demand on power stations.",
+                    "The ratio of actual energy produced to the maximum possible energy.",
+                    "The ratio of maximum demand on the power station to the connected load."
+                ],
+                answer: 2 // c. The ratio of actual energy produced to the maximum possible energy.
+            },
+            {
+                question: "Capacity factor will be very low when the power plant",
+                options: [
+                    "Is operated as base load plant.",
+                    "Is operated for supplying base load as well as the peak loads.",
+                    "Is operated in emergency only.",
+                    "Is under maintenance."
+                ],
+                answer: 2 // c. Is operated in emergency only.
+            },
+            {
+                question: "A thermal generating station has an installed capacity of 15 MW and supplies a daily load of 10 MW for 12 hours and 5 MW for remaining 12 hours. The plant capacity factor for this station is",
+                options: ["1", "0.75", "0.67", "0.5"],
+                answer: 3 // d. 0.5
+            },
+            {
+                question: "In a power station, the cost of generation of power reduces most effectively when",
+                options: [
+                    "Diversity factor alone increases.",
+                    "Both diversity factor and load factor increases.",
+                    "Only load factor increases.",
+                    "Both diversity factor and load factor decreases."
+                ],
+                answer: 1 // b. Both diversity factor and load factor increases.
+            },
+            {
+                question: "What is the diversity factor?",
+                options: [
+                    "A ratio of kWh generated to the product of plant capacity and the number of hours for which the plant is in operation.",
+                    "The ratio of sum of individual maximum demands to the maximum demand on power stations.",
+                    "The ratio of actual energy produced to the maximum possible energy.",
+                    "The ratio of maximum demand on the power station to the connected load."
+                ],
+                answer: 1 // b. The ratio of sum of individual maximum demands to the maximum demand on power stations.
+            },
+            {
+                question: "What is the operating value of diversity factor?",
+                options: ["Greater than unity.", "Less than unity.", "Always more than unity.", "Normally more than unity."],
+                answer: 0 // a. Greater than unity.
+            },
+            {
+                question: "Diversity factor is helpful in computing which of the following factors?",
+                options: ["Plant capacity.", "Average load.", "Units generated (kWh)", "Peak demand."],
+                answer: 0 // a. Plant capacity.
+            },
+            {
+                question: "A large diversity factor of the load in a power system",
+                options: ["Reduces the installation cost.", "Increases the installation cost.", "Does not affect the installation cost.", "None of the above."],
+                answer: 0 // a. Reduces the installation cost.
+            },
+            {
+                question: "What is the result of the product of diversity factor and maximum demand?",
+                options: ["Average demand", "Sum of consumers maximum demand", "Installed capacity.", "Generated power."],
+                answer: 1 // b. Sum of consumers maximum demand
+            },
+            {
+                question: "Maximum demand on the power system is",
+                options: [
+                    "Sum of the maximum demands of all its consumers.",
+                    "Greatest average load in a specified time.",
+                    "Peak value of load in a specified time.",
+                    "All of the above."
+                ],
+                answer: 1 // b. Greatest average load in a specified time.
+            },
+            {
+                question: "What is demand factor?",
+                options: [
+                    "Average load to maximum demand.",
+                    "Maximum demand to connected load.",
+                    "Connected load to maximum demand.",
+                    "Maximum demand to average load."
+                ],
+                answer: 1 // b. Maximum demand to connected load.
+            },
+            {
+                question: "What is the value of demand factor?",
+                options: ["Greater than unity.", "Less than unity.", "Always more than unity.", "Normally more than unity."],
+                answer: 1 // b. Less than unity.
+            },
+            {
+                question: "What is connected load?",
+                options: [
+                    "Installed electrical load in the premises of the consumer.",
+                    "Maximum load a consumer draws.",
+                    "Load drawn by a consumer at any instant.",
+                    "None of the above."
+                ],
+                answer: 0 // a. Installed electrical load in the premises of the consumer.
+            },
+            {
+                question: "The power system experiences peak demand from",
+                options: ["Midnight to 8 A.M", "8 A.M to 2 P.M", "2 P.M to 6 P.M", "6 P.M to 10 P.M"],
+                answer: 3 // d. 6 P.M to 10 P.M
+            },
+            {
+                question: "The maximum demand on the power system is 100 MW. If the annual load factor is 40%. Calculate the total energy generated in a year.",
+                options: [
+                    "3761 * 10^5 kWh",
+                    "4174 * 10^5 kWh",
+                    "3504 * 10^5 kWh",
+                    "3500 * 10^5 kWh"
+                ],
+                answer: 2 // c. 3504 * 10^5 kWh
+            },
+            {
+                question: "The power demand can be estimated approximately by",
+                options: ["Load survey method.", "Mathematical method.", "Statistical method.", "Economic parameters."],
+                answer: 2 // c. Statistical method.
+            },
+            {
+                question: "A generating station has a connected load of 55 MW and maximum demand of 20 MW. What is the demand factor?",
+                options: ["0.4785", "0.3636", "2.75", "1100"],
+                answer: 1 // b. 0.3636
+            },
+            {
+                question: "Determine the average demand of a plant if its load factor and maximum demand are 0.60 and 30 MW.",
+                options: ["20 MW", "18 MW", "50 MW", "13 MW"],
+                answer: 1 // b. 18 MW
+            },
+            {
+                question: "Utilisation factor is defined as the ratio of",
+                options: [
+                    "Average demand to the rated capacity of the plant.",
+                    "Maximum demand on the power plant to the rated capacity of the power plant.",
+                    "Rated capacity of the power plant to the maximum demand.",
+                    "None of these."
+                ],
+                answer: 1 // b. Maximum demand on the power plant to the rated capacity of the power plant.
+            },
+            {
+                question: "A consumer consumes 400 kWh per day at a load factor of 0.3. If he increases the load factor to 0.6 without any increase in maximum demand. What is the consumption of energy in kWh?",
+                options: ["800 kWh", "650 kWh", "1125 kWh", "425 kWh"],
+                answer: 0 // a. 800 kWh
+            },
+            {
+                question: "The yearly load duration curve of a power plant is a straight line. The maximum load is 850 MW and minimum load is 650 MW. The capacity of the plant is 950 MW. What is the capacity factor and the utilization factor?",
+                options: ["0.89, 0.78", "0.83, 0.65", "0.78, 0.89", "0.65, 0.83"],
+                answer: 2 // c. 0.78, 0.89
+            }, ,
+            {
+                question: "What is a load factor?",
+                options: [
+                    "The ratio of average to maximum demand.",
+                    "The ratio of maximum demand to average load.",
+                    "The product of maximum demand and average load.",
+                    "The ratio of average load to the plant capacity."
+                ],
+                answer: 0 // a. The ratio of average to maximum demand.
+            },
+            {
+                question: "What is the load factor of a power plant?",
+                options: [
+                    "Greater than unity.",
+                    "Less than unity.",
+                    "Always more than unity.",
+                    "Normally more than unity."
+                ],
+                answer: 1 // b. Less than unity.
+            },
+            {
+                question: "The load factor plays a key role in determining which among the following?",
+                options: [
+                    "Plant capacity.",
+                    "Overall cost per unit generated.",
+                    "Overall demand.",
+                    "Both (a) and (c)."
+                ],
+                answer: 1 // b. Overall cost per unit generated.
+            },
+            {
+                question: "An industrial consumer has a load pattern of 2000 kW 0.8 lag for 12 hours and 1000 kW unity power factor for 12 hours. What is the load factor?",
+                options: [
+                    "0.5",
+                    "0.55",
+                    "0.6",
+                    "0.75"
+                ],
+                answer: 3 // d. 0.75
+            },
+            {
+                question: "What is the plant capacity factor?",
+                options: [
+                    "A ratio of kWh generated to the product of plant capacity and the number of hours for which the plant is in operation.",
+                    "The ratio of sum of individual maximum demands to the maximum demand on power stations.",
+                    "The ratio of actual energy produced to the maximum possible energy.",
+                    "The ratio of maximum demand on the power station to the connected load."
+                ],
+                answer: 2 // c. The ratio of actual energy produced to the maximum possible energy.
+            },
+            {
+                question: "Capacity factor will be very low when the power plant",
+                options: [
+                    "Is operated as base load plant.",
+                    "Is operated for supplying base load as well as the peak loads.",
+                    "Is operated in emergency only.",
+                    "Is under maintenance."
+                ],
+                answer: 2 // c. Is operated in emergency only.
+            },
+            {
+                question: "A thermal generating station has an installed capacity of 15 MW and supplies a daily load of 10 MW for 12 hours and 5 MW for remaining 12 hours. The plant capacity factor for this station is",
+                options: [
+                    "1",
+                    "0.75",
+                    "0.67",
+                    "0.5"
+                ],
+                answer: 3 // d. 0.5
+            },
+            {
+                question: "In a power station, the cost of generation of power reduces most effectively when",
+                options: [
+                    "Diversity factor alone increases.",
+                    "Both diversity factor and load factor increases.",
+                    "Only load factor increases.",
+                    "Both diversity factor and load factor decreases."
+                ],
+                answer: 1 // b. Both diversity factor and load factor increases.
+            },
+            {
+                question: "What is the diversity factor?",
+                options: [
+                    "A ratio of kWh generated to the product of plant capacity and the number of hours for which the plant is in operation.",
+                    "The ratio of sum of individual maximum demands to the maximum demand on power stations.",
+                    "The ratio of actual energy produced to the maximum possible energy.",
+                    "The ratio of maximum demand on the power station to the connected load."
+                ],
+                answer: 1 // b. The ratio of sum of individual maximum demands to the maximum demand on power stations.
+            },
+            {
+                question: "What is operating value of diversity factor?",
+                options: [
+                    "Greater than unity.",
+                    "Less than unity.",
+                    "Always more than unity.",
+                    "Normally more than unity."
+                ],
+                answer: 0 // a. Greater than unity.
+            },
+            {
+                question: "Diversity factor is helpful in computing which of the following factors?",
+                options: [
+                    "Plant capacity.",
+                    "Average load.",
+                    "Units generated (kWh)",
+                    "Peak demand."
+                ],
+                answer: 0 // a. Plant capacity.
+            },
+            {
+                question: "A large diversity factor of the load in a power system",
+                options: [
+                    "Reduces the installation cost.",
+                    "Increases the installation cost.",
+                    "Does not affect the installation cost.",
+                    "None of the above."
+                ],
+                answer: 0 // a. Reduces the installation cost.
+            },
+            {
+                question: "What is the result of the product of diversity factor and maximum demand?",
+                options: [
+                    "Average demand",
+                    "Sum of consumers maximum demand",
+                    "Installed capacity.",
+                    "Generated power."
+                ],
+                answer: 1 // b. Sum of consumers maximum demand
+            },
+            {
+                question: "Maximum demand on the power system is",
+                options: [
+                    "Sum of the maximum demands of all its consumers.",
+                    "Greatest average load in a specified time.",
+                    "Peak value of load in a specified time.",
+                    "All of the above."
+                ],
+                answer: 1 // b. Greatest average load in a specified time.
+            },
+            {
+                question: "What is demand factor?",
+                options: [
+                    "Average load to maximum demand.",
+                    "Maximum demand to connected load.",
+                    "Connected load to maximum demand.",
+                    "Maximum demand to average load."
+                ],
+                answer: 1 // b. Maximum demand to connected load.
+            },
+            {
+                question: "What is the value of demand factor?",
+                options: [
+                    "Greater than unity.",
+                    "Less than unity.",
+                    "Always more than unity.",
+                    "Normally more than unity."
+                ],
+                answer: 1 // b. Less than unity.
+            },
+            {
+                question: "What is connected load?",
+                options: [
+                    "Installed electrical load in the premises of the consumer.",
+                    "Maximum load a consumer draws.",
+                    "Load drawn by a consumer at any instant.",
+                    "None of the above."
+                ],
+                answer: 0 // a. Installed electrical load in the premises of the consumer.
+            },
+            {
+                question: "The power system experiences peak demand from",
+                options: [
+                    "Midnight to 8 A.M",
+                    "8 A.M to 2 P.M",
+                    "2 P.M to 6 P.M",
+                    "6 P.M to 10 P.M"
+                ],
+                answer: 3 // d. 6 P.M to 10 P.M
+            },
+            {
+                question: "The maximum demand on the power system is 100 MW. If the annual load factor is 40%. Calculate the total energy generated in a year.",
+                options: [
+                    "3761 * 10^5 kWh",
+                    "4174 * 10^5 kWh",
+                    "3504 * 10^5 kWh",
+                    "3500 * 10^5 kWh"
+                ],
+                answer: 2 // c. 3504 * 10^5 kWh
+            },
+            {
+                question: "The power demand can be estimated approximately by",
+                options: [
+                    "Load survey method.",
+                    "Mathematical method.",
+                    "Statistical method.",
+                    "Economic parameters."
+                ],
+                answer: 2 // c. Statistical method.
+            },
+            {
+                question: "A generating station has a connected load of 55 MW and maximum demand of 20 MW. What is the demand factor?",
+                options: [
+                    "0.4785",
+                    "0.3636",
+                    "2.75",
+                    "1100"
+                ],
+                answer: 1 // b. 0.3636
+            },
+            {
+                question: "Determine the average demand of a plant if its load factor and maximum demand are 0.60 and 30 MW.",
+                options: [
+                    "20 MW",
+                    "18 MW",
+                    "50 MW",
+                    "13 MW"
+                ],
+                answer: 1 // b. 18 MW
+            },
+            {
+                question: "Utilisation factor is defined as the ratio of",
+                options: [
+                    "Average demand to the rated capacity of the plant.",
+                    "Maximum demand on the power plant to the rated capacity of the power plant.",
+                    "Rated capacity of the power plant to the maximum demand.",
+                    "None of these."
+                ],
+                answer: 1 // b. Maximum demand on the power plant to the rated capacity of the power plant.
+            },
+            {
+                question: "A consumer consumes 400 kWh per day at a load factor of 0.3. If he increases the load factor to 0.6 without any increase in maximum demand. What is the consumption of energy in kWh?",
+                options: [
+                    "800 kWh",
+                    "650 kWh",
+                    "1125 kWh",
+                    "425 kWh"
+                ],
+                answer: 0 // a. 800 kWh
+            },
+            {
+                question: "The yearly load duration curve of a power plant is a straight line. The maximum load is 850 MW and minimum load is 650 MW. The capacity of the plant is 950 MW. What is the capacity factor and the utilization factor?",
+                options: [
+                    "0.89, 0.78",
+                    "0.83, 0.65",
+                    "0.78, 0.89",
+                    "0.65, 0.83"
+                ],
+                answer: 2 // c. 0.78, 0.89
+            },
+            {
+                question: "Interconnected systems have the advantage of",
+                options: [
+                    "Reduced reserve plant capacity, capital cost per kW and economy in operation.",
+                    "Improved load factor, diversity factor and operation efficiency and increased reliability of supply.",
+                    "All of the above.",
+                    "None of the above."
+                ],
+                answer: 2 // c. All of the above.
+            },
+            {
+                question: "What is a load curve?",
+                options: [
+                    "A plot of load vs current.",
+                    "A plot of load vs time.",
+                    "A plot of load vs duration of time.",
+                    "Total number of units generated vs time."
+                ],
+                answer: 1 // b. A plot of load vs time.
+            },
+            {
+                question: "What does the area under the load curve represent?",
+                options: [
+                    "System voltage.",
+                    "Current.",
+                    "Energy consumed.",
+                    "Maximum demand."
+                ],
+                answer: 2 // c. Energy consumed.
+            },
+            {
+                question: "What does the highest point on the daily load curve represents?",
+                options: [
+                    "Peak load.",
+                    "Maximum demand.",
+                    "Both (a) & (d).",
+                    "None of these."
+                ],
+                answer: 1 // b. Maximum demand.
+            },
+            {
+                question: "Load curve of a generation is always",
+                options: [
+                    "Positive slope.",
+                    "Zero slope.",
+                    "Negative slope.",
+                    "Combination of (a), (b) and (c)."
+                ],
+                answer: 3 // d. Combination of (a), (b) and (c).
+            },
+            {
+                question: "If the daily load curve is divided by 24, what does this curve represent?",
+                options: [
+                    "Average load for the day.",
+                    "Connected load.",
+                    "Maximum demand.",
+                    "Demand factor."
+                ],
+                answer: 0 // a. Average load for the day.
+            },
+            {
+                question: "What does a mass curve represent?",
+                options: [
+                    "Average load.",
+                    "The total energy consumed by the load up to a particular time in a day.",
+                    "The number of hours for which a particular lasts during the day.",
+                    "The variation of load during different hours of the day."
+                ],
+                answer: 1 // b. The total energy consumed by the load up to a particular time in a day.
+            },
+            {
+                question: "The mass curve is plotted from which of the following curve?",
+                options: [
+                    "Chronological curve.",
+                    "Energy load curve.",
+                    "Load duration curve.",
+                    "Both (a) and (b)."
+                ],
+                answer: 2 // c. Load duration curve.
+            },
+            {
+                question: "A power station has a maximum demand of 15 MW. The plant capacity is 20 MW. Find the reserve capacity of the plant.",
+                options: [
+                    "5 MW",
+                    "15 MW",
+                    "20 MW",
+                    "10 MW"
+                ],
+                answer: 0 // 5 MW
+            },
+            {
+                question: "A power station plant load factor is defined as the ratio of",
+                options: [
+                    "the energy generated to that of maximum energy that could have been generated",
+                    "average load to the peak load",
+                    "minimum load to peak load",
+                    "minimum load to average load"
+                ],
+                answer: 0 // a. the energy generated to that of maximum energy that could have been generated
+            },
+            {
+                question: "What is the approximate efficiency of a normal thermal power station?",
+                options: [
+                    "30-40%",
+                    "45-55%",
+                    "20-25%",
+                    "60-70%"
+                ],
+                answer: 0 // a. 30-40%
+            },
+            {
+                question: "For economy in generation power",
+                options: [
+                    "diversity factor should be high",
+                    "plant utilization factor",
+                    "load factor should be high",
+                    "load factor and diversity factor should be low"
+                ],
+                answer: 1 // b. plant utilization factor
+            },
+            {
+                question: "Which of the following category of consumers can provide highest load factor?",
+                options: [
+                    "A domestic consumer",
+                    "A continuous process plant",
+                    "A steel melting unit using arc furnace",
+                    "A cold storage plant"
+                ],
+                answer: 1 // b. A continuous process plant
+            },
+            {
+                question: "In a system if the base load is the same as the maximum demand, the load factor will be",
+                options: [
+                    "1",
+                    "Zero",
+                    "Infinity",
+                    "1 percent"
+                ],
+                answer: 0 // a. 1
+            },
+            {
+                question: "Which domestic utility item has highest power rating?",
+                options: [
+                    "Refrigerator",
+                    "Ceiling fan",
+                    "Tube light",
+                    "Electric iron"
+                ],
+                answer: 3 // d. Electric iron
+            },
+            {
+                question: "During summer months the increased load is due to",
+                options: [
+                    "increased water supply",
+                    "vacations in institutions",
+                    "increased business activity",
+                    "increased use of fans and air conditioners"
+                ],
+                answer: 3 // d. increased use of fans and air conditioners
+            },
+            {
+                question: "Load factor for the 0-6 hour period alone is",
+                options: [
+                    "0.438",
+                    "0.876",
+                    "0.999",
+                    "1.0"
+                ],
+                answer: 3 // d. 1.0
+            },
+            {
+                question: "Load factor for the period 6-24 hours period is",
+                options: [
+                    "0.438",
+                    "0.5",
+                    "0.876",
+                    "1.0"
+                ],
+                answer: 1 // b. 0.5
+            },
+            {
+                question: "Five consumers having peak demands of A, B, C, D, and E have individual load factors of 0.5. It can be concluded that",
+                options: [
+                    "their combined load factor will be 0.5",
+                    "their peak demand during the day will be (A + B + C + D + E)",
+                    "their combined power consumption in a day will be 12 (A + B + C + D + E)",
+                    "their average demands are equal"
+                ],
+                answer: 2 // c. their combined power consumption in a day will be 12 (A + B + C + D + E)
+            },
+            {
+                question: "The highest point on a load curve represents",
+                options: [
+                    "Average demand",
+                    "Diversion field demand",
+                    "Peak demand",
+                    "None of the above"
+                ],
+                answer: 2 // c. Peak demand
             }
-        ];
+        ]; 
 
         let currentQuestionIndex = 0;
         let score = 0;
@@ -386,18 +1113,18 @@
         function showQuestion(index) {
             const quizContainer = document.getElementById("quiz-container");
             quizContainer.innerHTML = `
-                    <div class="question-container l active">
-                    <h5>Quesitoin ${index + 1} From ${questions.length}</h5>
-                    <h4 style="color:blue">${questions[index].question}</h4>
-                    <div id="options-container" style="color:blue" class="d-flex flex-wrap"></div>
-                    </div>
-                `;
+                  <div class="question-container l active">
+                  <h5>Quesitoin ${index + 1} From ${questions.length}</h5>
+                  <h4 style="color:blue">${questions[index].question}</h4>
+                  <div id="options-container" style="color:blue" class="d-flex flex-wrap"></div>
+                  </div>
+              `;
 
 
             const optionsContainer = document.getElementById("options-container");
             questions[index].options.forEach((option, i) => {
                 optionsContainer.innerHTML += `
-                    <div class="option-box" onclick="checkAnswer(${i})">${option}</div> `;
+                  <div class="option-box" onclick="checkAnswer(${i})">${option}</div> `;
             });
         }
 
@@ -450,10 +1177,10 @@
             questions.forEach((question, index) => {
                 const solutionDiv = document.createElement("div");
                 solutionDiv.innerHTML = `
-                    <h4 style="color: red">${index + 1}. ${question.question}</h4>
-                    ${question.selectedIndex !== undefined ? `<p><strong>Your Choice:</strong> ${question.options[question.selectedIndex]}</p>` : ''}
-                    <p><strong>Correct Answer:</strong> ${question.options[question.answer]}</p>
-                    `;
+                  <h4 style="color: red">${index + 1}. ${question.question}</h4>
+                  ${question.selectedIndex !== undefined ? `<p><strong>Your Choice:</strong> ${question.options[question.selectedIndex]}</p>` : ''}
+                  <p><strong>Correct Answer:</strong> ${question.options[question.answer]}</p>
+                  `;
                 solutionsContainer.appendChild(solutionDiv);
             });
         }
