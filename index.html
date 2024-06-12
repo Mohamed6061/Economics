@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Me</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            height: 93vh;
+            background-image: url(https://wallpaperaccess.com/full/2384075.jpg);
+            background-size: contain;
+        }
+
+        .n {
+            background: #eeeeeeb8;
+            padding: 24px;
+            box-shadow: 8px 6px 14px 0px black;
+            border-radius: 19px;
+            width: 85%;
+        }
+
+        .question-container {
+            display: none;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        .correct {
+            background-color: green;
+            color: white;
+        }
+
+        .incorrect {
+            background-color: red;
+            color: white;
+        }
+
+        .option-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: -3px -4px 0px 0 #4c4c4c;
+        }
+
+        #end-of-page {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container n mt-5">
+        <h2 class="text-center">Economics MCQ</h2>
+        <div class="progress mt-4">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div id="score-container" class="text-center mt-4"></div>
+        <hr>
+        <hr>
+        <div id="quiz-container" class="mt-4">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+        <hr>
+        <div id="end-of-page" class="mt-4">
+            <p>Developed by Mohamed Abdel Fatah</p>
+            <p><a href="https://github.com/Mohamed6061">Githup</a></p>
+            <p><a href="https://www.linkedin.com/in/mohamed-abdel-fatah-0369b6221">LinkedIn</a></p>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="correct.mp3"></audio>
+    <audio id="incorrect-sound" src="./g.mp3"></audio>
+
+    <script>
+        const questions = [
+            {
+                question: "The area under the daily load curve gives average power.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                question: "The connected load is generally greater than the maximum demand.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "The value of demand factor is less than 1.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "The higher the load factor of a power station, The higher in the cost per unit generated.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                question: "The value of diversity factor is less than 1.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                question: "The lesser the diversity factor, the lesser is the cost of generation of power.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                question: "A generating unit operates with maximum efficiency at about 75% of its rated capacity.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "In an annual load curve, time is taken along the X-axis and load along the Y-axis.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "Base load occurs on the power station for 8760 hours in a year.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "Depreciation is the reduction in value of equipment due to wear and tear, or age.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "The Depreciation of electrical energy can be divided into three parts viz., fixed cost, semi-fixed cost, and running cost.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                question: "The number of units generated will be more if the load factor is high.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "Semi-fixed cost is directly proportional to the max demand on power station.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "The running cost is directly proportional to the energy generated.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "In the diminishing value method, depreciation charges are heavy in the initial years.",
+                options: ["True", "False"],
+                answer: 0
+            }, {
+                question: "The flat rate for power load is generally lower than the lighting load.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "In block rate tariff, the rate of energy in the first one or two blocks is higher because fixed charges are merged into energy charges.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "The block rate tariff is mostly applicable to domestic consumers.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "Maximum demand tariff is not applied to domestic consumers because their max demand is small.",
+                options: ["True", "False"],
+                answer: 0
+            }, 
+            {
+                question: "The power factor of an a.c. circuit is given by active power divided by apparent power.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "The lagging power factor is due to reactive power drawn by the circuit.",
+                options: ["True", "False"],
+                answer: 0
+            },
+            {
+                question: "Power factor can be improved by installing such a device in parallel with load which takes lagging reactive power.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                question: "The major reason for low lagging power factor of supply system is due to the use of Syncronys motors.",
+                options: ["True", "False"],
+                answer: 1
+            },
+            {
+                "question": "An over-excited synchronous motor on no load is known as synchronous condenser.",
+                options: ["True", "False"],
+                answer: 0
+            }
+            , 
+            {
+                question: "Area under the daily load curve divided by 24 gives average load.",
+                options: ["average load", "maximum demand", "units generated"],
+                answer: 0
+            },
+            {
+                question: "The knowledge of diversity factor helps in determining plant capacity.",
+                options: ["average load", "units generated", "plant capacity"],
+                answer: 2
+            },
+            {
+                question: "More efficient plants are used as base load stations.",
+                options: ["base load stations", "peak load stations"],
+                answer: 0
+            },
+            {
+                question: "A diesel power plant is generally used as a peak load station.",
+                options: ["base load station", "peak load station"],
+                answer: 1
+            },
+            {
+                question: "In a hydro-steam system, steam power station carries the base load during low flow day.",
+                options: ["high flow day", "low flow day"],
+                answer: 1
+            },
+            {
+                question: "In an interconnected grid system, the diversity factor of the whole system increases.",
+                options: ["increases", "decreases", "remains constant"],
+                answer: 0
+            },
+            {
+                question: "Installed capacity of a power station is more than the maximum demand.",
+                options: ["less", "more"],
+                answer: 1
+            },
+            {
+                question: "Annual load factor is determined from annual load curve.",
+                options: ["daily", "monthly", "annual"],
+                answer: 2
+            },
+
+            {
+                question: "Fixed cost of electrical energy ............. maximum demand.",
+                options: ["depends upon", "does not depend upon"],
+                answer: 1
+            },
+            {
+                question: "For the same maximum demand, if load factor is decreased, the cost of energy is .............",
+                options: ["increased", "decreased", "not affected"],
+                answer: 0
+            },
+            {
+                question: "Average load is ............... if the load factor increases.",
+                options: ["increased", "decreased"],
+                answer: 0
+            },
+            {
+                question: "The annual, ............... cost is due to the annual cost of fuel, oil, taxation, wages and salaries to the operating staff.",
+                options: ["running", "fixed"],
+                answer: 0
+            }
+            ,
+            {
+                question: "A consumer whose load conditions do not deviate from ideal one should be charged at ..... rate than the one whose load conditions change appreciably.",
+                options: ["lower", "higher"],
+                answer: 0
+            },
+            {
+                question: "A consumer who consumes more electrical energy should pay ...... fixed charges per unit.",
+                options: ["less", "more"],
+                answer: 0
+            },
+            {
+                question: "The ideal tariff for any type of consumer is ....... tariff.",
+                options: ["two-part", "three-part"],
+                answer: 1
+            },
+            {
+                question: "The maximum kVA demand of the consumer is ....... proportional to power factor.",
+                options: ["inversely", "directly"],
+                answer: 0
+            },
+            {
+                question: "The smaller the lagging reactive power drawn by a circuit, the ............... is its power factor.",
+                options: ["smaller", "greater"],
+                answer: 1
+            },
+            {
+                question: "The maximum value of power factor can be ...............",
+                options: ["1", "0·5", "0·9"],
+                answer: 0
+            },
+            {
+                question: "KVAR = ............... tan φ",
+                options: ["kW", "KVA"],
+                answer: 0
+            },
+            {
+                question: "By improving the power factor of the system, the kilowatts delivered by the generating station are ...............",
+                options: ["decreased", "increased", "not changed"],
+                answer: 1
+            },
+            {
+                question: "The most economical power factor for a consumer is generally ...............",
+                options: ["0·95 lagging", "unity", "0·6 lagging"],
+                answer: 0
+            },
+            {
+                question: "The improvement of the power factor of the system causes the available active power from the generating units to",
+                options: ["decrease", "increase", "be the same"],
+                answer: 1 // b) increase
+            },
+            {
+                question: "The most economical power factor for a consumer is generally",
+                options: ["0-6 lagging", "0·95 lagging", "Unity"],
+                answer: 1 // b) 0·95 lagging
+            },
+            {
+                question: "The maximum demand of a power station is .......... Installed capacity",
+                options: ["greater than", "less than", "equal to"],
+                answer: 1
+            },
+            {
+                question: "Lesser the diversity factor ........ the cost of power generation",
+                options: ["Increase", "Decrease", "Has no effect on"],
+                answer: 0 // a) Increase
+            },
+            {
+                question: "The main reason for low power factor of the system is the presence of:",
+                options: ["Induction motors", "Synchronous motors", "Fluorescent lamps", "Dc motors"],
+                answer: 0
+            },
+            {
+                question: "The advantage of the static capacitors is",
+                options: ["Low losses.", "Easy installation.", "Lower maintenance.", "All of the above."],
+                answer: 3 // d) All of the above.
+            },
+            {
+                question: "The advantage of synchronous condensers is",
+                options: ["That it helps in achieving the stepless control of power factor.", "The motor windings have a lower thermal stability.", "The maintenance cost is low.", "All of the above"],
+                answer: 0 // a) That it helps in achieving the stepless control of power factor.
+            },
+            {
+                question: "Which among the following happens in a low power factor?",
+                options: ["Large kVA rating of the equipment.", "Greater conductor size.", "increased handling capacity of the system.", "Both a and b", "All of the above."],
+                answer: 3
+            },
+            {
+                question: "For whom among the following consumers is penalty imposed for low power factor?",
+                options: ["Residential and commercial consumers.", "Industrial consumers.", "Agricultural consumers.", "All of the above."],
+                answer: 1 // b) Industrial consumers.
+            },
+            {
+                question: "A synchronous condenser is virtually",
+                options: ["Over excited Induction motor", "Under excited synchronous motor", "Over excited synchronous motor", "Singly excited synchronous motor"],
+                answer: 2 // c) Over excited synchronous motor
+            },
+            {
+                question: "Power factor improvement by synchronous condenser have drawback of",
+                options: ["Comparatively higher maintenance and operating cost", "Requirement of auxiliary equipment for starting", "Possibility of falling out of synchronism causing in interruption of supply", "All of above"],
+                answer: 3 // d) All of above
+            },
+            {
+                question: "The most suitable location of a power factor improvement device is",
+                options: ["Near the electrical appliances which is responsible for poor power factor", "At the receiving end in case of transmission line", "At the sending end", "Both (a) and (b)"],
+                answer: 3 // d) Both (a) and (b)
+            },
+            {
+                question: "In order to meet the future requirements, the plant capacity should be ............ above the maximum demand on the plant.",
+                options: ["5%-10%", "15%-20%", "20%-25%", "25%-30%"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion(index) {
+            const quizContainer = document.getElementById("quiz-container");
+            quizContainer.innerHTML = `
+                    <div class="question-container l active">
+                    <h5>Quesitoin ${index + 1} From ${questions.length}</h5>
+                    <h4 style="color:blue">${questions[index].question}</h4>
+                    <div id="options-container" style="color:blue" class="d-flex flex-wrap"></div>
+                    </div>
+                `;
+
+
+            const optionsContainer = document.getElementById("options-container");
+            questions[index].options.forEach((option, i) => {
+                optionsContainer.innerHTML += `
+                    <div class="option-box" onclick="checkAnswer(${i})">${option}</div> `;
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            const answer = questions[currentQuestionIndex].answer;
+
+            questions[currentQuestionIndex].selectedIndex = selectedIndex;
+
+            if (selectedIndex === answer) {
+                score++;
+                document
+                    .querySelectorAll(".option-box")
+                [answer].classList.add("correct");
+                document.getElementById("correct-sound").play();
+            } else {
+                document
+                    .querySelectorAll(".option-box")
+                [selectedIndex].classList.add("incorrect");
+                document
+                    .querySelectorAll(".option-box")
+                [answer].classList.add("correct");
+                document.getElementById("incorrect-sound").play();
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    showQuestion(currentQuestionIndex);
+                    updateProgressBar();
+                } else {
+                    showScore();
+                    showSolutions();
+                }
+            }, 2000);
+        }
+
+        function showScore() {
+            const quizContainer = document.getElementById("quiz-container");
+            const scoreContainer = document.getElementById("score-container");
+            quizContainer.innerHTML = "";
+            scoreContainer.innerHTML = `<h3>Your result ${score} from ${questions.length}</h3>`;
+        }
+
+        function showSolutions() {
+            const quizContainer = document.getElementById("quiz-container");
+            const solutionsContainer = document.createElement("div");
+            solutionsContainer.classList.add("question-solution-container");
+            quizContainer.appendChild(solutionsContainer);
+
+            questions.forEach((question, index) => {
+                const solutionDiv = document.createElement("div");
+                solutionDiv.innerHTML = `
+                    <h4 style="color: red">${index + 1}. ${question.question}</h4>
+                    ${question.selectedIndex !== undefined ? `<p><strong>Your Choice:</strong> ${question.options[question.selectedIndex]}</p>` : ''}
+                    <p><strong>Correct Answer:</strong> ${question.options[question.answer]}</p>
+                    `;
+                solutionsContainer.appendChild(solutionDiv);
+            });
+        }
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progress-bar");
+            const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressBar.setAttribute("aria-valuenow", progress);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showQuestion(currentQuestionIndex);
+            updateProgressBar();
+        });
+    </script>
+</body>
+
+</html>
