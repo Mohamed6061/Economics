@@ -93,7 +93,7 @@
     <script>
         const questions = [
             {
-                question: "Question consists of there parts 😊. This part from question after every chapter: ",
+                question: "Question consists of there parts 😊. This part is from question after every chapter: ",
                 options: ["Continue"],
                 answer: 0
             }, {
@@ -1115,7 +1115,7 @@
             quizContainer.innerHTML = `
                   <div class="question-container l active">
                   <h5>Quesitoin ${index + 1} From ${questions.length}</h5>
-                  <h4 style="color:blue">${questions[index].question}</h4>
+                  <h4 style="color: red;    font-weight: 600;">${questions[index].question}</h4>
                   <div id="options-container" style="color:blue" class="d-flex flex-wrap"></div>
                   </div>
               `;
